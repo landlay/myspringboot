@@ -3,12 +3,12 @@ package com.landkay.springboot.controller;
 import com.landkay.springboot.Constant.ResponseCodeConstant;
 import com.landkay.springboot.biz.UserBiz;
 import com.landkay.springboot.model.User;
-import com.landkay.springboot.model.UserInfo;
 import com.landkay.springboot.model.response.UserResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
@@ -22,10 +22,10 @@ public class UserController {
     public UserResponse queryUserInfo(User user) {
 
         UserResponse userResponse = new UserResponse();
-        UserInfo result = new UserInfo();
+        User result = new User();
 
         //check requestParams
-        if (StringUtils.isBlank(user.getUserId())){
+        if (null == user.getUserId()){
             userResponse.setCode(ResponseCodeConstant.PARAMS_ISNULL.getCode());
             userResponse.setMsg(ResponseCodeConstant.PARAMS_ISNULL.getMsg());
             return userResponse;

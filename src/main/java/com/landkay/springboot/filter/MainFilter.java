@@ -24,6 +24,7 @@ public class MainFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         log.info("**********  filter -- doFilter **************");
+        chain.doFilter(request,response);
     }
 
     @Override
