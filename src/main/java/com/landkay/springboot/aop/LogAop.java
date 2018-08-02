@@ -35,20 +35,22 @@ public class LogAop {
         // 接收到请求，记录请求内容
         logger.info("WebLogAspect.doBefore()");
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
+        if (null != attributes) {
+            HttpServletRequest request = attributes.getRequest();
 
-        // 记录下请求内容
-        logger.info("URL : " + request.getRequestURL().toString());
-        logger.info("HTTP_METHOD : " + request.getMethod());
-        logger.info("IP : " + request.getRemoteAddr());
-        logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature
-                ().getName());
+            // 记录下请求内容
+            logger.info("URL : " + request.getRequestURL().toString());
+            logger.info("HTTP_METHOD : " + request.getMethod());
+            logger.info("IP : " + request.getRemoteAddr());
+            logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature
+                    ().getName());
 
-        //获取所有参数方法一：
-        Enumeration<String> enu = request.getParameterNames();
-        while (enu.hasMoreElements()) {
-            String paraName = enu.nextElement();
-            System.out.println(paraName + ": " + request.getParameter(paraName));
+            //获取所有参数方法一：
+            Enumeration<String> enu = request.getParameterNames();
+            while (enu.hasMoreElements()) {
+                String paraName = enu.nextElement();
+                System.out.println(paraName + ": " + request.getParameter(paraName));
+            }
         }
     }
 
