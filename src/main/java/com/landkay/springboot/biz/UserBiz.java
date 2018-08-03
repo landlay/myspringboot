@@ -17,4 +17,13 @@ public interface UserBiz {
      * @param userId
      */
     User queryUserInfo(Integer userId);
+
+    /**
+     * Description //TODO
+     * @param user
+     * @author landkay
+     * @Date 11:28 2018/8/3
+     * @return Integer
+     **/
+    Integer insertOne(User user);
 }

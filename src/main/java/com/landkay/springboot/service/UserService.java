@@ -19,4 +19,13 @@ public interface UserService {
      * @return 
      **/
     public User selectByPrimaryKey(Integer userId);
+
+    /**
+     * Description //TODO
+     * @param user
+     * @author landkay
+     * @Date 11:26 2018/8/3
+     * @return Integer
+     **/
+    public Integer insertOne(User user);
 }

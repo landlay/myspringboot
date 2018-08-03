@@ -3,6 +3,7 @@ package com.landkay.springboot.dao;
 import com.landkay.springboot.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * Description //TODO
@@ -11,7 +12,7 @@ import org.apache.ibatis.annotations.Param;
  * @Date 17:05 2018/8/2
  * @return 
  **/
-@Mapper
+@Repository
 public interface UserDao {
 
     /**
@@ -22,4 +23,13 @@ public interface UserDao {
      * @return 
      **/
     public User selectByPrimaryKey(@Param("userId") Integer userId);
+
+    /**
+     * Description //TODO
+     * @param user
+     * @author landkay
+     * @Date 11:25 2018/8/3
+     * @return Integer
+     **/
+    public Integer insertOne(User user);
 }

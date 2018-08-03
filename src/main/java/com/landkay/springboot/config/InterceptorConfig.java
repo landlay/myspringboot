@@ -14,10 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * @date 2018/8/215:51
  */
 @Configuration
-public class WebAppConfig extends WebMvcConfigurationSupport {
+public class InterceptorConfig extends WebMvcConfigurationSupport {
 
     @Bean
-    MainInterceptor getMainInterceptor() {
+    MainInterceptor getMainInterceptor(){
         return new MainInterceptor();
     }
 

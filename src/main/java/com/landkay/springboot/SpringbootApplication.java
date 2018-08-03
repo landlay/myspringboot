@@ -10,6 +10,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 @MapperScan("com.landkay.springboot.dao")
+/**
+ * Description //TODO
+ * @author landkay
+ * @Date 10:54 2018/8/3
+ **/
 public class SpringbootApplication {
 
     public static void main(String[] args) {

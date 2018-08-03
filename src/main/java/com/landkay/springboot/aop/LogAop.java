@@ -18,13 +18,19 @@ import java.util.Enumeration;
 
 @Aspect
 @Component
+/**
+ * Description 打印日志
+ * @author landkay
+ * @Date 11:42 2018/8/3
+ * @return
+ **/
 public class LogAop {
 
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(public * com.landkay.springboot..*.*(..))")
-    //@Pointcut("execution(public * com.landkay.springboot.controller..*.*(..))")
+    //@Pointcut("execution(public * com.landkay.springboot..*.*(..))")
+    @Pointcut("execution(public * com.landkay.springboot.controller..*.*(..))")
     public void webLog() {
     }
 

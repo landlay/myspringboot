@@ -3,16 +3,22 @@ package com.landkay.springboot.controller;
 import com.landkay.springboot.Constant.ResponseCodeConstant;
 import com.landkay.springboot.biz.UserBiz;
 import com.landkay.springboot.model.User;
+import com.landkay.springboot.model.response.UserInsertResponse;
 import com.landkay.springboot.model.response.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
 @RequestMapping("/user")
+/**
+ * Description //TODO
+ * @param
+ * @author landkay
+ * @Date 10:37 2018/8/3
+ * @return 
+ **/
 public class UserController {
 
     @Autowired
@@ -43,5 +49,31 @@ public class UserController {
             return userResponse;
         }
         return userResponse;
+    }
+
+    /**
+     * Description 新增一个用户
+     * @param user
+     * @author landkay
+     * @Date 11:31 2018/8/3
+     * @return  UserInsertResponse
+     **/
+    @PostMapping("/insert/one")
+    public UserInsertResponse insertUser(@RequestBody User user){
+
+        UserInsertResponse userInsertResponse = new UserInsertResponse();
+        try {
+            Integer integer = userBiz.insertOne(user);
+            userInsertResponse.setCode(ResponseCodeConstant.SUCCESS.getCode());
+            userInsertResponse.setMsg(ResponseCodeConstant.SUCCESS.getMsg());
+            userInsertResponse.setResult(integer);
+        }catch (Exception e){
+            log.error("系统异常: " + e.getMessage());
+            userInsertResponse.setCode(ResponseCodeConstant.ERROR.getCode());
+            userInsertResponse.setMsg(ResponseCodeConstant.ERROR.getMsg());
+            return userInsertResponse;
+        }
+
+        return userInsertResponse;
     }
 }

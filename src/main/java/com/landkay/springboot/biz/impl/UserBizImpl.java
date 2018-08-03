@@ -25,11 +25,19 @@ public class UserBizImpl implements UserBiz {
     @Override
     public User queryUserInfo(Integer userId) {
 
-        //User user = userService.selectByPrimaryKey(userId);
+        User user = userService.selectByPrimaryKey(userId);
 
         User userInfo = new User();
         userInfo.setUserName("吕布无敌");
         userInfo.setAge("28");
-        return userInfo;
+        return user;
+    }
+
+    @Override
+    public Integer insertOne(User user) {
+
+        Integer integer = userService.insertOne(user);
+
+        return integer;
     }
 }

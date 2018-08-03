@@ -21,4 +21,9 @@ public class UserServiceImpl implements UserService {
     public User selectByPrimaryKey(Integer userId) {
         return userDao.selectByPrimaryKey(userId);
     }
+
+    @Override
+    public Integer insertOne(User user) {
+        return userDao.insertOne(user);
+    }
 }

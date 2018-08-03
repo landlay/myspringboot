@@ -18,8 +18,9 @@ server:
 
 
 mybatis:
-  mapper-location: classpath*:mapper/**/*.xml
+  mapper-locations: classpath*:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.landkay.springboot.model
+  #config-locations: classpath:mybatis-config.xml
 
 ---
 spring:
@@ -30,7 +31,18 @@ spring:
     password : landkay
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    #driverClassName: com.mysql.jdbc.Driver
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    #validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
 
 
 ---

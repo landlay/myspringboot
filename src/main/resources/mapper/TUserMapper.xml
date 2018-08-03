@@ -21,4 +21,9 @@
         from tb_user
         where id = #{userId}
     </select>
+    <insert id="insertOne" parameterType="com.landkay.springboot.model.User">
+        insert into tb_user (user_name, password, name, age, sex, birthday, created, updated)
+    values (#{userName}, #{password}, #{name},
+      #{age}, #{sex}, #{birthday}, #{created}, #{updated})
+    </insert>
 </mapper>
