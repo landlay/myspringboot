@@ -2,15 +2,9 @@ package com.landkay.springboot.biz.impl;
 
 import com.landkay.springboot.biz.UserBiz;
 import com.landkay.springboot.model.User;
-import com.landkay.springboot.model.UserInfo;
 import com.landkay.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Resource;
 
 /**
  * Description //TODO
@@ -52,7 +46,7 @@ public class UserBizImpl implements UserBiz {
     public Integer insertOne(User user) {
 
         Integer integer = userService.insertOne(user);
-        int i = 1 / 0;
+        // int i = 1 / 0;   仅用来测试事物是否成功
         return integer;
     }
 }
