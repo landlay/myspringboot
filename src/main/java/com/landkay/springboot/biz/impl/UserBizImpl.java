@@ -6,6 +6,9 @@ import com.landkay.springboot.model.UserInfo;
 import com.landkay.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -17,6 +20,7 @@ import javax.annotation.Resource;
  * @return 
  **/
 @Service
+//@Transactional(readOnly = true, rollbackFor = Exception.class)
 public class UserBizImpl implements UserBiz {
 
     @Autowired
@@ -34,10 +38,21 @@ public class UserBizImpl implements UserBiz {
     }
 
     @Override
+    /**
+     * Description
+     * 注意：方法的@Transactional会覆盖类上面声明的事务
+     * Propagation.REQUIRED ：有事务就处于当前事务中，没事务就创建一个事务
+     * isolation=Isolation.DEFAULT：事务数据库的默认隔离级别
+     * @param [user]
+     * @author landkay
+     * @Date 12:13 2018/8/3
+     * @return java.lang.Integer
+     **/
+    //@Transactional(propagation= Propagation.REQUIRED,isolation= Isolation.DEFAULT,readOnly=false)
     public Integer insertOne(User user) {
 
         Integer integer = userService.insertOne(user);
-
+        int i = 1 / 0;
         return integer;
     }
 }

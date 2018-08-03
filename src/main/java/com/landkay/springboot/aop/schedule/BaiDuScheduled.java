@@ -26,7 +26,7 @@ public class BaiDuScheduled {
      * @Date 10:38 2018/8/2
      * @return 
      **/
-    @Scheduled(cron = "0/20 * * * * ?")
+    @Scheduled(cron = "0/10 * * * * ?")
     public void pushDataScheduled() {
 
         String url = "http://baijiahao.baidu.com/s?id=1607639342822187726";
