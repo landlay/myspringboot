@@ -1,7 +1,8 @@
 package com.landkay.springboot.controller;
 
-import com.landkay.springboot.Constant.ResponseCodeConstant;
 import com.landkay.springboot.biz.UserBiz;
+import com.landkay.springboot.constant.ResponseCodeConstant;
+import com.landkay.springboot.feign.UserFeign;
 import com.landkay.springboot.model.User;
 import com.landkay.springboot.model.response.UserInsertResponse;
 import com.landkay.springboot.model.response.UserResponse;
@@ -23,8 +24,10 @@ public class UserController {
 
     @Autowired
     UserBiz userBiz;
+    @Autowired
+    UserFeign userFeign;
 
-    @GetMapping(value = "/query/userInfo")
+    @RequestMapping(value = "/query/userInfo", method = RequestMethod.GET)
     public UserResponse queryUserInfo(User user) {
 
         UserResponse userResponse = new UserResponse();
@@ -75,5 +78,29 @@ public class UserController {
         }
 
         return userInsertResponse;
+    }
+
+
+    @GetMapping(value = "/query/userInfo/feign")
+    public UserResponse queryUserInfoFeign(User user) {
+
+        UserResponse userResponse = new UserResponse();
+
+        //check requestParams
+        if (null == user.getUserId()){
+            userResponse.setCode(ResponseCodeConstant.PARAMS_ISNULL.getCode());
+            userResponse.setMsg(ResponseCodeConstant.PARAMS_ISNULL.getMsg());
+            return userResponse;
+        }
+        try {
+            log.info("请求参数为: requestParams = " + user.getUserId());
+            userResponse = userFeign.queryUserInfo(user);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            userResponse.setCode(ResponseCodeConstant.ERROR.getCode());
+            userResponse.setMsg(ResponseCodeConstant.ERROR.getMsg());
+            return userResponse;
+        }
+        return userResponse;
     }
 }

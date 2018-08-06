@@ -33,27 +33,31 @@
 
         <!-- 生成实体类地址 -->
         <!-- 生成到targetPackage下 -->
-        <javaModelGenerator targetPackage="com.landkay.springboot.model" targetProject="springboot/src/main/java">
+        <javaModelGenerator targetPackage="com.landkay.springboot.model" targetProject="D:\eclipse\code\springCloud\IdeaProjects\springboot/src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成mapxml文件 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="springboot/src/main/resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="D:\eclipse\code\springCloud\IdeaProjects\springboot/src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!-- 生成mapxml对应client，也就是接口Dao -->
         <javaClientGenerator targetPackage="com.landkay.springboot.dao" type="XMLMAPPER"
-                             targetProject="springboot/src/main/java">
+                             targetProject="D:\eclipse\code\springCloud\IdeaProjects\springboot/src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- 配置表信息 -->
         <!-- schema为数据库名 -->
         <!-- tableName为需要生成的表名 -->
-        <table schema="mybatis" tableName="tb_user">
+        <table schema="mybatis" tableName="tb_orderdetail" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false">
         </table>
-        <table schema="mybatis" tableName="tb_orderdetail">
+
+        <table schema="mybatis" tableName="tb_user" domainObjectName="TbUser"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
         </table>
     </context>
-
 </generatorConfiguration>

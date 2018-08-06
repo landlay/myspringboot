@@ -1,4 +1,4 @@
-package com.landkay.springboot.Constant;
+package com.landkay.springboot.constant;
 
 public enum ResponseCodeConstant {
 
