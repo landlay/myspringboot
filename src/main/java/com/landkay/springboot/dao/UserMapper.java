@@ -22,7 +22,7 @@ public interface UserMapper {
      * @Date 17:07 2018/8/2
      * @return 
      **/
-    public User selectByPrimaryKey(@Param("userId") Integer userId);
+    public User selectByPrimaryKey(@Param("id") Integer userId);
 
     /**
      * Description //TODO

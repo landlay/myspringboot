@@ -12,7 +12,7 @@ import com.landkay.springboot.model.User;
 public interface UserBiz {
 
     /**
-     * query userInfo by userId
+     * query userInfo by id
      * @return
      * @param userId
      */

@@ -34,23 +34,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>-->
 
         <!-- feign 依赖 -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
             <version>1.4.4.RELEASE</version>
-        </dependency>
-
-
+        </dependency>-->
 
         <!-- springboot -->
         <dependency>
@@ -116,14 +106,15 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
+            <!-- 如果需要注册springcloud 则需要放开注释, 并且放开feign注释 -->
+            <!--<dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>Finchley.BUILD-SNAPSHOT</version>
-                <!--<version>Dalston.RC1</version>-->
+                &lt;!&ndash;<version>Dalston.RC1</version>&ndash;&gt;
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 

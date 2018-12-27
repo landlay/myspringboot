@@ -2,7 +2,6 @@ package com.landkay.springboot.controller;
 
 import com.landkay.springboot.biz.UserBiz;
 import com.landkay.springboot.constant.ResponseCodeConstant;
-import com.landkay.springboot.feign.UserFeign;
 import com.landkay.springboot.model.User;
 import com.landkay.springboot.model.response.UserInsertResponse;
 import com.landkay.springboot.model.response.UserResponse;
@@ -24,8 +23,8 @@ public class UserController {
 
     @Autowired
     UserBiz userBiz;
-    @Autowired
-    UserFeign userFeign;
+    //@Autowired
+    //UserFeign userFeign;
 
     @RequestMapping(value = "/query/userInfo", method = RequestMethod.GET)
     public UserResponse queryUserInfo(User user) {
@@ -34,14 +33,14 @@ public class UserController {
         User result = new User();
 
         //check requestParams
-        if (null == user.getUserId()){
+        if (null == user.getId()){
             userResponse.setCode(ResponseCodeConstant.PARAMS_ISNULL.getCode());
             userResponse.setMsg(ResponseCodeConstant.PARAMS_ISNULL.getMsg());
             return userResponse;
         }
         try {
-            log.info("请求参数为: requestParams = " + user.getUserId());
-            result = userBiz.queryUserInfo(user.getUserId());
+            log.info("请求参数为: requestParams = " + user.getId());
+            result = userBiz.queryUserInfo(user.getId());
             userResponse.setCode(ResponseCodeConstant.SUCCESS.getCode());
             userResponse.setMsg(ResponseCodeConstant.SUCCESS.getMsg());
             userResponse.setResult(result);
@@ -81,19 +80,19 @@ public class UserController {
     }
 
 
-    @GetMapping(value = "/query/userInfo/feign")
+    /*@GetMapping(value = "/query/userInfo/feign")
     public UserResponse queryUserInfoFeign(User user) {
 
         UserResponse userResponse = new UserResponse();
 
         //check requestParams
-        if (null == user.getUserId()){
+        if (null == user.getId()){
             userResponse.setCode(ResponseCodeConstant.PARAMS_ISNULL.getCode());
             userResponse.setMsg(ResponseCodeConstant.PARAMS_ISNULL.getMsg());
             return userResponse;
         }
         try {
-            log.info("请求参数为: requestParams = " + user.getUserId());
+            log.info("请求参数为: requestParams = " + user.getId());
             userResponse = userFeign.queryUserInfo(user);
         } catch (Exception e) {
             log.error(e.getMessage());
@@ -102,5 +101,5 @@ public class UserController {
             return userResponse;
         }
         return userResponse;
-    }
+    }*/
 }

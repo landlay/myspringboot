@@ -1,11 +1,8 @@
 package com.landkay.springboot.feign;
 
-import com.landkay.springboot.constant.FeignConstant;
 import com.landkay.springboot.model.User;
 import com.landkay.springboot.model.response.UserResponse;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -17,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date 2018/8/317:08
  */
 @Service
-@FeignClient(FeignConstant.SPRING_BOOT_NAME)
+//@FeignClient(FeignConstant.SPRING_BOOT_NAME)
 public interface UserFeign {
 
     /**
