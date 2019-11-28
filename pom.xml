@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.landkay</groupId>
-    <artifactId>springboot</artifactId>
+    <artifactId>homecare</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>springboot</name>
+    <name>homecare</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

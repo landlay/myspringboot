@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.landkay.springboot.dao.TbOrderdetailMapper" >
-  <resultMap id="BaseResultMap" type="com.landkay.springboot.model.TbOrderdetail" >
+<mapper namespace="com.landkay.homecare.dao.TbOrderdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.landkay.homecare.model.TbOrderdetail" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="order_id" property="orderId" jdbcType="INTEGER" />
     <result column="item_id" property="itemId" jdbcType="INTEGER" />
@@ -21,13 +21,13 @@
     delete from tb_orderdetail
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.landkay.springboot.model.TbOrderdetail" >
+  <insert id="insert" parameterType="com.landkay.homecare.model.TbOrderdetail" >
     insert into tb_orderdetail (id, order_id, item_id, 
       total_price, status)
     values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{itemId,jdbcType=INTEGER}, 
       #{totalPrice,jdbcType=DOUBLE}, #{status,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.landkay.springboot.model.TbOrderdetail" >
+  <insert id="insertSelective" parameterType="com.landkay.homecare.model.TbOrderdetail" >
     insert into tb_orderdetail
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.landkay.springboot.model.TbOrderdetail" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.landkay.homecare.model.TbOrderdetail" >
     update tb_orderdetail
     <set >
       <if test="orderId != null" >
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.landkay.springboot.model.TbOrderdetail" >
+  <update id="updateByPrimaryKey" parameterType="com.landkay.homecare.model.TbOrderdetail" >
     update tb_orderdetail
     set order_id = #{orderId,jdbcType=INTEGER},
       item_id = #{itemId,jdbcType=INTEGER},
