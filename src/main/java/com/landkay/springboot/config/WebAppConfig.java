@@ -1,4 +1,4 @@
-package com.landkay.homecare.config;
+package com.landkay.springboot.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
@@ -40,7 +40,7 @@ public class WebAppConfig extends WebMvcConfigurationSupport {
     public HttpMessageConverters fastJsonConfigure() {
         FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        //日期格式化
+        //锟斤拷锟节革拷式锟斤拷
         fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat, SerializerFeature.BrowserCompatible, SerializerFeature.WriteMapNullValue, SerializerFeature.DisableCircularReferenceDetect);
         converter.setFastJsonConfig(fastJsonConfig);

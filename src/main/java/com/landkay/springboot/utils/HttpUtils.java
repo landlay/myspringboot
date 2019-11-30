@@ -1,4 +1,4 @@
-package com.landkay.homecare.utils;
+package com.landkay.springboot.utils;
 
 
 import org.apache.commons.lang3.StringUtils;

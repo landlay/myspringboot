@@ -1,6 +1,6 @@
-package com.landkay.homecare.config;
+package com.landkay.springboot.config;
 
-import com.landkay.homecare.interceptor.MainInterceptor;
+import com.landkay.springboot.interceptor.MainInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
