@@ -1,6 +1,6 @@
-package com.landkay.homecare.dao;
+package com.landkay.springboot.dao;
 
-import com.landkay.homecare.model.TbUser;
+import com.landkay.springboot.model.TbUser;
 
 public interface TbUserMapper {
     int deleteByPrimaryKey(Long id);

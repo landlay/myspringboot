@@ -1,4 +1,4 @@
-package com.landkay.homecare.config;
+package com.landkay.springboot.config;
 
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;

@@ -1,6 +1,6 @@
-package com.landkay.homecare.biz;
+package com.landkay.springboot.biz;
 
-import com.landkay.homecare.model.User;
+import com.landkay.springboot.model.User;
 
 /**
  * Description //TODO

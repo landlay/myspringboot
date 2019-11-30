@@ -1,4 +1,4 @@
-package com.landkay.homecare.model;
+package com.landkay.springboot.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

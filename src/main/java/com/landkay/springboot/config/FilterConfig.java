@@ -1,6 +1,6 @@
-package com.landkay.homecare.config;
+package com.landkay.springboot.config;
 
-import com.landkay.homecare.filter.MainFilter;
+import com.landkay.springboot.filter.MainFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

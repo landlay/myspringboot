@@ -1,4 +1,4 @@
-package com.landkay.homecare.model.response;
+package com.landkay.springboot.model.response;
 
 import lombok.Data;
 

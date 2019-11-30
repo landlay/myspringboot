@@ -1,4 +1,4 @@
-package com.landkay.homecare.startup;
+package com.landkay.springboot.startup;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -12,9 +12,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //@EnableEurekaClient
 //@EnableFeignClients
 @SpringBootApplication
-@ComponentScan(basePackages = "com.landkay.homecare")
+@ComponentScan(basePackages = "com.landkay.springboot")
 @EnableScheduling
-@MapperScan("com.landkay.homecare.dao")
+@MapperScan("com.landkay.springboot.dao")
 /**
  * Description // springboot 启动类
  * @author landkay

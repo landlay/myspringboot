@@ -1,6 +1,6 @@
-package com.landkay.homecare.dao;
+package com.landkay.springboot.dao;
 
-import com.landkay.homecare.model.TbOrderdetail;
+import com.landkay.springboot.model.TbOrderdetail;
 
 public interface TbOrderdetailMapper {
     int deleteByPrimaryKey(Integer id);

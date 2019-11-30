@@ -1,6 +1,6 @@
-package com.landkay.homecare.dao;
+package com.landkay.springboot.dao;
 
-import com.landkay.homecare.model.User;
+import com.landkay.springboot.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

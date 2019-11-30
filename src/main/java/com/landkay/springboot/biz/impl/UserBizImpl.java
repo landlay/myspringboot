@@ -1,8 +1,8 @@
-package com.landkay.homecare.biz.impl;
+package com.landkay.springboot.biz.impl;
 
-import com.landkay.homecare.biz.UserBiz;
-import com.landkay.homecare.model.User;
-import com.landkay.homecare.service.UserService;
+import com.landkay.springboot.biz.UserBiz;
+import com.landkay.springboot.model.User;
+import com.landkay.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.landkay.homecare.feign;
+package com.landkay.springboot.feign;
 
-import com.landkay.homecare.model.User;
-import com.landkay.homecare.model.response.UserResponse;
+import com.landkay.springboot.model.User;
+import com.landkay.springboot.model.response.UserResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

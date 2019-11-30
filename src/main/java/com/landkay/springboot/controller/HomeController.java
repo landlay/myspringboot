@@ -1,4 +1,4 @@
-package com.landkay.homecare.controller;
+package com.landkay.springboot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

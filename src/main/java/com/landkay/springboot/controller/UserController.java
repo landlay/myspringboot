@@ -1,10 +1,10 @@
-package com.landkay.homecare.controller;
+package com.landkay.springboot.controller;
 
-import com.landkay.homecare.biz.UserBiz;
-import com.landkay.homecare.constant.ResponseCodeConstant;
-import com.landkay.homecare.model.User;
-import com.landkay.homecare.model.response.UserInsertResponse;
-import com.landkay.homecare.model.response.UserResponse;
+import com.landkay.springboot.biz.UserBiz;
+import com.landkay.springboot.constant.ResponseCodeConstant;
+import com.landkay.springboot.model.User;
+import com.landkay.springboot.model.response.UserInsertResponse;
+import com.landkay.springboot.model.response.UserResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

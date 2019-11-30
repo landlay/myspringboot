@@ -1,4 +1,4 @@
-package com.landkay.homecare.model;
+package com.landkay.springboot.model;
 
 public class TbOrderdetail {
     private Integer id;
