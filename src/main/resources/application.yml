@@ -1,7 +1,7 @@
 server:
   port: 8090
   servlet:
-    context-path: /com.landkay.homecare
+    context-path: /com.landkay.springBoot
   session-timeout: 30
   tomcat:
     max-threads: 0
